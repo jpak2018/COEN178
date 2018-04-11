@@ -1,0 +1,17 @@
+SQL> DEFINE _EDITOR = "vim"
+SQL> edit data.sql
+
+SQL> SELECT * from test;
+
+      TNUM STR                                                                  
+---------- ----------                                                           
+         1 A test                                                               
+        10 ten                                                                  
+        11 eleven                                                               
+        12 twelve                                                               
+
+SQL> host ls
+
+SQL> host pwd
+
+SQL> spool off

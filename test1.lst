@@ -1,0 +1,70 @@
+SQL> CREATE TABLE trial( tnum int, str char(10));
+
+Table created.
+
+SQL> INSERT INTO trial VALUES (1,'A test');
+
+1 row created.
+
+SQL> INSERT INTO trial VALUES (2,'B test');
+
+1 row created.
+
+SQL> INSERT INTO trial VALUES (3, 'C test');
+
+1 row created.
+
+SQL> SELECT * FROM trial;
+
+      TNUM STR                                                                  
+---------- ----------                                                           
+         1 A test                                                               
+         2 B test                                                               
+         3 C test                                                               
+
+SQL> SELECT tnum FROM trial;
+
+      TNUM                                                                      
+----------                                                                      
+         1                                                                      
+         2                                                                      
+         3                                                                      
+
+SQL> SELECT str FROM trial;
+
+STR                                                                             
+----------                                                                      
+A test                                                                          
+B test                                                                          
+C test                                                                          
+
+SQL> INSERT INTO trial VALUES(1,'A test');
+
+1 row created.
+
+SQL> SELECT * FROM trial;
+
+      TNUM STR                                                                  
+---------- ----------                                                           
+         1 A test                                                               
+         2 B test                                                               
+         3 C test                                                               
+         1 A test                                                               
+
+SQL> CREATE TABLE test2( tnum int, str char(10),PRIMARY KEY(tnum));
+
+Table created.
+
+SQL> INSERT INTO test2 VALUES(1,'A , test');
+
+1 row created.
+
+SQL> INSERT INTO test2 VALUES(1,'A , test');
+INSERT INTO test2 VALUES(1,'A , test')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (JPAK.SYS_C00629276) violated 
+
+# Can't insert two of the same tnum value since that is a primary key
+
+SQL> spool off;
